@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Navigation from "@components/Navigation.astro";
 const pageTitle = 'Gallery';
 ---
 
@@ -12,10 +13,7 @@ const pageTitle = 'Gallery';
         <title>{pageTitle}</title>
     </head>
     <body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/gallery/">Gallery</a>
-        <a href="/accommodation/">Accommodation</a>
+        <Navigation />
         <h1>Astro Gallery Images</h1>
     </body>
 </html>
