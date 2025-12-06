@@ -1,0 +1,15 @@
+name: Deploy to Firebase Hosting Preview Channel
+on:
+  pull_request:
+jobs:
+  deploy_live_website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: yarn build
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HOTEL_VEDA_ROYALE }}
+          projectId: hotel-veda-royale
+          expires: '7d'
